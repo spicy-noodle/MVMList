@@ -12,7 +12,7 @@ import android.view.View.OnLongClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import java.util.ArrayList
-
+//maindata의 아이템을 담을 arrylist를 만든다
 class MainAdapter(private val arrayList: ArrayList<MainData>?) :
     RecyclerView.Adapter<CustomViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -26,11 +26,14 @@ class MainAdapter(private val arrayList: ArrayList<MainData>?) :
         holder.tv_name.text = arrayList[position].tv_name
         holder.tv_content.text = arrayList[position].tv_content
         holder.itemView.tag = position
+        //itemview 클릭시 이벤트 구현
+        //클릭시 보여준다
         holder.itemView.setOnClickListener { view ->
+            //curname 변수를 - curname변수 = tv_name이며 문자형태로 가져온다(toString).
             val curName = holder.tv_name.text.toString()
+            //Toast창을 텍스트로 띄운다.-내용은?, curname, Toast길이(시간은)짧게 . 보여준다.
             Toast.makeText(view.context, curName, Toast.LENGTH_SHORT).show()
         }
-        holder.itemView.setOnLongClickListener { true }
     }
 
     override fun getItemCount(): Int {
