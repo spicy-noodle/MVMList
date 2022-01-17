@@ -1,17 +1,15 @@
 package com.example.mvmlist
 
-import com.example.mvmlist.MainData
-import androidx.recyclerview.widget.RecyclerView
-import com.example.mvmlist.MainAdapter.CustomViewHolder
-import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
-import com.example.mvmlist.R
-import android.widget.Toast
-import android.view.View.OnLongClickListener
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import java.util.ArrayList
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mvmlist.MainAdapter.CustomViewHolder
+import java.util.*
+
 //maindata의 아이템을 담을 arrylist를 만든다
 class MainAdapter(private val arrayList: ArrayList<MainData>?) :
     RecyclerView.Adapter<CustomViewHolder>() {
